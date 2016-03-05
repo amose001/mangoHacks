@@ -10,9 +10,14 @@ function getEchonestTags() {
     var url = echo_nest + 'song/search';
     $.ajaxSetup({ traditional: true });
     $.getJSON(url, { 'format':'json',
-    api_key: echo_api_id,
+        api_key: echo_api_id,
+        results: '30',
+        //song_type:'indie',
+        //min_acousticness: '.5',
+        min_tempo:'100',
+        min_liveness:'.5',
     bucket: ['id:spotify','tracks'], // this must stay the same
-    mood: 'sad' //This will be changed to whatever we determine as our algorithm from clarifai
+    mood: 'happy' //This will be changed to whatever we determine as our algorithm from clarifai
     },
     function (data) {
         numOfSongs = data.response.songs.length;
@@ -86,4 +91,18 @@ function spotifyPlaylist() {
 function functionTimer() {
     getEchonestTags();
     setTimeout(spotifyPlaylist,3000);
+}
+
+function createAlgorithm() {
+    var popTagList = ['party', 'club', 'dancing', '', '', '', '', '', ''];
+    var partyScene = "party club dancing nightlife";
+    var gymScene = "weight gym weight exercise heavy";
+    var rockScene = "black hair color unnatural ";
+    var numOfTags = clarifaiTagsArray.length;
+
+    for(var i=0;i<numOfTags-1;i++){
+        if (clarifaiTagsArray[i]) {
+
+        }
+    }
 }
