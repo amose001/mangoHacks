@@ -10,7 +10,10 @@ function getEchonestTags() {
     var url = echo_nest + 'song/search';
     $.ajaxSetup({ traditional: true });
     $.getJSON(url, { 'format':'json',
-    api_key: echo_api_id,
+        api_key: echo_api_id,
+        results: '30',
+        min_acousticness: '.5',
+        min_energy:'.25',
     bucket: ['id:spotify','tracks'], // this must stay the same
     mood: 'sad' //This will be changed to whatever we determine as our algorithm from clarifai
     },
