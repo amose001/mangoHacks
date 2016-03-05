@@ -2,7 +2,7 @@
 var express = require('express');
 var app 	= express();
 var path	= require('path');
-var 	part = require('./public/js/Clarifai_part.js');
+var 	part = require('./app/Clarifai_part.js');
 
 /*
 var Clarifai = require('./public/js/clarifai_node.js');
@@ -31,6 +31,9 @@ function igetTags(){
 }
 */
 //console.log(part);
+exports.hello = function(){
+	console.log("Hello world");
+}
 part.getTags();
 //Clarifai starts here
 //var part 	= require('./libs/Clarifai_part.js');

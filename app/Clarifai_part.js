@@ -1,5 +1,5 @@
 // JavaScript source code
-
+var express = require('express');
 var Clarifai = require('./clarifai_node.js');
 var CLARIFAI_ID = "7vnVnwWoY7heeIvNlVatC--4uMgdPGRUYa_LpX6V";
 var CLARIFAI_SECRET = "T_eDYqVrqeEHoP5ZgD99BxX2ybjOIoxTWmAxboq8";
@@ -24,7 +24,7 @@ function resultHandler( err, res ) {
 }
 
 exports.getTags = function() {
-	var imageURL = 'http://i.imgur.com/b7mzeLI.jpg';
+	var imageURL = 'http://i.imgur.com/x3ezg99.jpg';
 	var imageId = "uploadedImage";
 	Clarifai.tagURL( imageURL , imageId, resultHandler );
 }

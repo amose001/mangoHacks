@@ -1,16 +1,3 @@
-// clarifai_node.js - the Clarifai client API for node.js programs
-//
-// this version supports:
-//   tagging by single URL
-//   tagging by multiple URLs
-//   giving feedback to add tags to multiple docids
-//   giving feedback to remove tags from multiple docids
-//   automatically requesting a new access token, and queuing any requests received while the access token request is in flight
-//   honoring the server throttling instructions   
-//
-// to get an idea of how to use the API, see the example clarifai_sample.js in the same directory
-// requires only that you have node installed
-
 var querystring = require('querystring');
 var https = require('https');
 var http = require('http');
