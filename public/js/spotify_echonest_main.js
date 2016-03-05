@@ -27,7 +27,7 @@ function getEchonestTags() {
                     function (data2) {
 
                         if (data2.is_playable == true) {
-                            console.log(songID[2]);
+                            console.log(data2);
                             datas.push(songID[2]);
                         }
                     })
