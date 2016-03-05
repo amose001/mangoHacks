@@ -32,9 +32,11 @@ function getEchonestTags() {
                         }
                     })
             }
-
+            console.log("%s\n",i);
         }
+        console.log("got out of loop\n");
     });
+    console.log("I got here, out of the functions\n");
 };
 
 function spotifyPlaylist() {
