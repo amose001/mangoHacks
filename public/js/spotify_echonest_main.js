@@ -34,7 +34,7 @@ function getEchonestTags(callback) {
                             datas.push(data2.id);
                             console.log("%s", datas.length);
                         }
-                    }).
+                    })
 
 
 
