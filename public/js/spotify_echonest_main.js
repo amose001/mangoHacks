@@ -154,5 +154,6 @@ function createAlgorithm() {
             }
         }
     }
+    console.log(tempo.toString() + " " + tempoMax.toString() + " " + danceability.toString() + " " + energy.toString() + " " + acousticness.toString() + " " + loudness.toString() + " " + liveness.toString());
     functionTimer();
 }
