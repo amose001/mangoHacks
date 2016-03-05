@@ -4,7 +4,7 @@ var client_secret = '8f15c046151345d88cb373847dece382'; // Your client secret or
 var echo_nest = 'http://developer.echonest.com/api/v4/';
 var echo_api_id = 'G92VW09ZBNGLUVN8C';
 var datas = [];
-function getEchonestTags(callback) {
+function getEchonestTags() {
     console.log("Opening EchonestTags");
     var url = echo_nest + 'song/search';
     $.ajaxSetup({ traditional: true });
@@ -46,7 +46,6 @@ function getEchonestTags(callback) {
     });
     console.log("I got here, out of the functions\n");
     // var myFunction = setTimeout(spotifyPlaylist, 2000);
-    callback();
 };
 
 function spotifyPlaylist() {
