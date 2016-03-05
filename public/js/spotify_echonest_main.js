@@ -103,15 +103,47 @@ function functionTimer() {
 }
 
 function createAlgorithm() {
-    var popTagList = ['party', 'club', 'dancing', '', '', '', '', '', ''];
+    var library = "books book library university school"
     var partyScene = "party club dancing nightlife";
-    var gymScene = "weight gym weight exercise heavy";
+    var gymScene = "weight gym weight exercise";
     var rockScene = "black hair color unnatural ";
     var numOfTags = clarifaiTagsArray.length;
-
+    var deviations = ((Math.random() * 5) + 1);
+    var tempo, danceability, energy, acousticness, loudness, liveness, song_hotness,mood;
     for(var i=0;i<numOfTags-1;i++){
-        if (clarifaiTagsArray[i]) {
+        if (clarifaiTagsArray[i].indexOf(partyScene) > -1) {
+            deviations = Math.random();
 
+            danceability += deviations*0.07;
+            energy += deviations;
+            loudness += 10 + (deviations * 10 + 1);
+            tempo += deviations * 20;
+            mood = "exciting";
+
+        } else if (clarifaiTagsArray[i].indexOf(gymScene) > -1) {
+            deviations = Math.random();
+
+            energy += deviations * 0.07;
+            song_hotness += deviations * 0.07;
+            loudness += 10 + (deviations * 10 + 1);
+            tempo += deviations * 20;
+            mood = "exciting";
+
+
+        } else if (clarifaiTagsArray[i].indexOf(library) > -1) {
+            deviations = Math.random();
+            acousticness += deviations * 0.07;
+
+
+        } else if (clarifaiTagsArray[i].indexOf(rockScene) > -1) {
+            deviations = Math.random();
+
+        } else if (clarifaiTagsArray[i].indexOf("indoors") > -1) {
+            deviations = Math.random();
+            tempo += deviations * 10;
+
+        } else if (clarifaiTagsArray[i].indexOf("outdoors") > -1) {
+            deviations = Math.random();
         }
     }
 }
