@@ -10,6 +10,9 @@ function previewFile() {
   if (file) {
     reader.readAsDataURL(file);
   }
+
+  var enableButton = document.getElementById('get_song');
+    enableButton.disabled=false;
 }
 /* old non functioning code */
 // function readURL(input) {
