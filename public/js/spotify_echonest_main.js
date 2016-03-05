@@ -28,7 +28,9 @@ function getEchonestTags() {
 
                         if (data2.is_playable == true) {
                             console.log(data2.id);
+                            console.log("\n");
                             datas.push(data2.id);
+                            console.log("%s",datas.length);
                         }
                     })
                 console.log("got out of the 2nd jquery");
@@ -42,24 +44,26 @@ function getEchonestTags() {
 
 function spotifyPlaylist() {
     var echonestBegin = getEchonestTags();
+    console.log("we manage to get passed echonest method");
     if (echonestBegin == null) {
         console.log("problem calling echonest");
     }
-    var playlistLink = "https://embed.spotify.com/?uri=spotify:track:PREFEREDTITLE:"
-    console.log("%s\n",datas.length);
-    for (var i = 0; i < datas.length-1; i++) {
-        playlistLink += datas[i];
-        if (i < datas.length-2) {
-            playlistLink += ','
+    else {
+        var playlistLink = "https://embed.spotify.com/?uri=spotify:track:PREFEREDTITLE:"
+        console.log("%s\n", datas.length);
+        for (var i = 0; i < datas.length - 1; i++) {
+            playlistLink += datas[i];
+            if (i < datas.length - 2) {
+                playlistLink += ','
+            }
         }
+        console.log(playlistLink);
+        var spotifyPlaylist = document.createElement('iframe');
+        spotifyPlaylist.allowtransparency = "true";
+        spotifyPlaylist.frameBorder = "0";
+        spotifyPlaylist.src = playlistLink;
+
+        var playLabel = document.getElementById('playSongs');
+        playLabel.insertBefore(spotifyPlaylist, playLabel);
     }
-    console.log(playlistLink);
-    var spotifyPlaylist = document.createElement('iframe');
-    spotifyPlaylist.allowtransparency = "true";
-    spotifyPlaylist.frameBorder = "0";
-    spotifyPlaylist.src=playlistLink;
-
-    var playLabel = document.getElementById('playSongs');
-    playLabel.insertBefore(spotifyPlaylist,playLabel);
-
 }
