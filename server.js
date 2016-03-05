@@ -2,6 +2,7 @@
 var express = require('express');
 var app 	= express();
 var path	= require('path');
+var 	part = require('./libs/Clarifai_part.js');
 var Clarifai = require('./libs/clarifai_node.js');
 
 var CLIENT_ID = "7vnVnwWoY7heeIvNlVatC--4uMgdPGRUYa_LpX6V";
@@ -21,14 +22,14 @@ function resultHandler( err, res ) {
 	}
 }
 
-function getTags(){
+function igetTags(){
 	var imageURL = 'http://i.imgur.com/pbDpoqG.jpg';
 	var imageID = "uploadedImage";
 	Clarifai.tagURL(imageURL, imageID, resultHandler);
 }
 
-
-getTags();
+//console.log(part);
+part.getTags();
 //Clarifai starts here
 //var part 	= require('./libs/Clarifai_part.js');
 
