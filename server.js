@@ -158,6 +158,10 @@ app.get('/refresh_token', function (req, res) {
 //set the static files location /public/img will be /img for users
 app.use(express.static(__dirname + '/public'));
 
+app.set('view engine', 'ejs');
+
+app.set('views', __dirname + '/views');
+
 //pass our application into our routes
 require('./app/routes')(app);
 

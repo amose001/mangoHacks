@@ -24,11 +24,11 @@ function resultHandler( err, res ) {
 }
 
 exports.getTags = function() {
-	var imageURL = 'http://i.imgur.com/x3ezg99.jpg';
+	var imageURL = 'http://i.imgur.com/FJTZmrs.jpg';
 	var imageId = "uploadedImage";
 	Clarifai.tagURL( imageURL , imageId, resultHandler );
+	return exports.tags;
 }
-
 
 //getTags();
 
