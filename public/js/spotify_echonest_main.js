@@ -16,7 +16,7 @@ function buildClarifaiArray(list){
 function getEchonestTags() {
     console.log("Opening EchonestTags");
     var url = echo_nest + 'song/search';
-	console.log(clarifaiTagsArray);
+    console.log(clarifaiTagsArray);
     $.ajaxSetup({ traditional: true });
     $.getJSON(url, { 'format':'json',
         api_key: echo_api_id,
@@ -33,6 +33,8 @@ function getEchonestTags() {
     bucket: ['id:spotify','tracks'], // this must stay the same
     },
     function (data) {
+        console.log("%s\n", url);
+        console.log(data);
         numOfSongs = data.response.songs.length;
         var i;
         for (i = 0; i < numOfSongs-1; i++) {
