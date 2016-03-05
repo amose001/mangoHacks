@@ -41,6 +41,7 @@ part.getTags();
 //var part 	= require('./libs/Clarifai_part.js');
 
 //SPOTIFY AUTHORIZATION BEGINS HERE
+/*
 var generateRandomString = function (length) {
     var text = '';
     var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -152,7 +153,7 @@ app.get('/refresh_token', function (req, res) {
         }
     });
 });
-
+*/
 
 //set the static files location /public/img will be /img for users
 app.use(express.static(__dirname + '/public'));
