@@ -20,8 +20,10 @@ function getEchonestTags() {
             if (data.response.songs[i].tracks[0] != null) {
                 var myJSONObject = data.response.songs[i].tracks[0].foreign_id;
                 songID = myJSONObject.split(":");
-                //console.log(songID[2]);
-                //datas.push(songID[2]);
+
+                console.log(songID[2]);
+               // datas.push(songID[2]);
+				
                 var spotifyCheckURL = "https://api.spotify.com/v1/tracks/" + songID[2] + "?market=US";
 
 
@@ -45,6 +47,7 @@ function getEchonestTags() {
             console.log("%s\n",i);
         }
         console.log("got out of loop\n");
+	//	spotifyPlaylist();
     });
     console.log("I got here, out of the functions\n");
     // var myFunction = setTimeout(spotifyPlaylist, 2000);
@@ -58,7 +61,7 @@ function spotifyPlaylist() {
         console.log("problem calling echonest");
     }
     */
-        var playlistLink = "https://embed.spotify.com/?uri=spotify:track:PREFEREDTITLE:"
+        var playlistLink = "https://embed.spotify.com/?uri=spotify:trackset:PREFEREDTITLE:"
         console.log("%s\n", datas.length);
         for (var i = 0; i < datas.length - 1; i++) {
             playlistLink += datas[i];
