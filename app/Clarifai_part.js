@@ -27,8 +27,10 @@ function resultHandler( err, res ) {
 exports.getTags = function() {
 	console.log("KANYEHAMEHA");
 	console.log(server.URL);
-	var imageURL = 'http://i.imgur.com/72zJC8Y.jpg';
-//	var imageURL ="../public/" + server.URL;
+//	var imageURL = 'http://i.imgur.com/72zJC8Y.jpg';
+	var imageURL = server.URL;
+	console.log(imageURL);
+
 	var imageId = "uploadedImage";
 	Clarifai.tagURL( imageURL , imageId, resultHandler );
 	return exports.tags;
