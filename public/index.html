@@ -8,7 +8,8 @@
         <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
         <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
         <script src="js/upload.js"></script>
-		<script src="js/pixelAnalysis.js"></script>
+		<!--<script src="js/pixelAnalysis.js"></script>-->
+		<script src="js/colorfinder.js"></script>
 
 		<!-- css -->
 		<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css"> <!-- pureform -->
@@ -16,7 +17,7 @@
         <title>Themed Beats</title>
     </head>
     <body>
-	<div>
+	<div style="float: left; display: inline-block">
         <button id="clarifai" onclick="getTags()">Test Clarifai</button>
         <br>
         <br>
@@ -27,16 +28,33 @@
         <img id="blah" src="#" alt="your image" />
 	</div>
 
-	<div style="float:left">
-		<img id="scream" src="imgs/img_the_scream.jpg" alt="The Scream" width="220" height="277">
-	</div>
-	<div style="float:left">
-		<canvas id="myCanvas" width="220" height="277" style="border:1px solid #d3d3d3;">
-			Your browser does not support the HTML5 canvas tag.</canvas>
+	<div style="display: inline-block;">
+		<img id="image" src="imgs/alexis_texas.jpg" alt="The Scream" width="220" height="277">
 	</div>
 
+	<!--<input type="button" style="display:block;"
+	onclick="load()" value="find color"></input>-->
+
+	<!--Color detected: -->
+	<div id="color" style="width: 200px; height: 200px;
+						   border: 1px solid rgb(170, 170, 170);">
+	</div>
+	<!--<div style="float:left">
+		<canvas id="myCanvas" width="220" height="277" style="border:1px solid #d3d3d3;">
+			Your browser does not support the HTML5 canvas tag.</canvas>
+	</div>-->
+	<script>
+		var rgb = new ColorFinder().getMostProminentColor(document.getElementById('image'));
+		document.getElementById("color").style.backgroundColor = 'rgb('+rgb.r+', '+rgb.b+', '+rgb.g+')';
+	</script>
+
+
+	
+	
+
 		<!-- javascript -->
-		<script src="js/pixelAnalysis.js"></script>
+		<script src="js/colorfinder.js"></script>
+		<!--<script src="js/pixelAnalysis.js"></script>-->
 		<script src="js/upload.js"></script>
 		<script src="js/Clarifai_part.js"></script>
 		<script src="js/spotify_echonest_main.js"></script>
