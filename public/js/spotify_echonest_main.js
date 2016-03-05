@@ -28,7 +28,6 @@ function getEchonestTags() {
 
                         if (data2.is_playable == true) {
                             console.log(data2.id);
-                            console.log("\n");
                             datas.push(data2.id);
                             console.log("%s",datas.length);
                         }
@@ -43,12 +42,13 @@ function getEchonestTags() {
 };
 
 function spotifyPlaylist() {
+    /*
     var echonestBegin = getEchonestTags();
     console.log("we manage to get passed echonest method");
     if (echonestBegin == null) {
         console.log("problem calling echonest");
     }
-    else {
+    */
         var playlistLink = "https://embed.spotify.com/?uri=spotify:track:PREFEREDTITLE:"
         console.log("%s\n", datas.length);
         for (var i = 0; i < datas.length - 1; i++) {
@@ -64,6 +64,6 @@ function spotifyPlaylist() {
         spotifyPlaylist.src = playlistLink;
 
         var playLabel = document.getElementById('playSongs');
-        playLabel.insertBefore(spotifyPlaylist, playLabel);
-    }
+        playLabel.appendChild(spotifyPlaylist);
+    
 }
