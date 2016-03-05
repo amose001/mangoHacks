@@ -29,7 +29,8 @@ function getEchonestTags() {
                         if (data2.is_playable == true) {
                             console.log(data2.id);
                             datas.push(data2.id);
-                            console.log("%s",datas.length);
+                            console.log("%s", datas.length);
+                            var myFunction = setTimeout(spotifyPlaylist, 2000);
                         }
                     })
                 console.log("got out of the 2nd jquery");
