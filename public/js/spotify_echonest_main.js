@@ -5,6 +5,7 @@ var echo_nest = 'http://developer.echonest.com/api/v4/';
 var echo_api_id = 'G92VW09ZBNGLUVN8C';
 var datas = [];
 var clarifaiTagsArray=[];
+var tempo, tempoMax, danceability, energy, acousticness, loudness, liveness, song_hotness, mood2;
 
 function buildClarifaiArray(list){
 	clarifaiTagsArray = [];
@@ -19,13 +20,17 @@ function getEchonestTags() {
     $.ajaxSetup({ traditional: true });
     $.getJSON(url, { 'format':'json',
         api_key: echo_api_id,
+        min_tempo:tempo,
+        max_tempo: tempoMax,
+        min_danceability: danceability,
+        min_energy: energy,
+        min_acousticness: acousticness,
+        min_loudness: loudness,
+        min_liveness: liveness,
+        mood:mood2,
+
         results: '30',
-        //song_type:'indie',
-        //min_acousticness: '.5',
-        min_tempo:'100',
-        min_liveness:'.5',
     bucket: ['id:spotify','tracks'], // this must stay the same
-    mood: 'happy' //This will be changed to whatever we determine as our algorithm from clarifai
     },
     function (data) {
         numOfSongs = data.response.songs.length;
@@ -109,7 +114,6 @@ function createAlgorithm() {
     var rockScene = "black hair color unnatural ";
     var numOfTags = clarifaiTagsArray.length;
     var deviations = ((Math.random() * 5) + 1);
-    var tempo, danceability, energy, acousticness, loudness, liveness, song_hotness,mood;
     for(var i=0;i<numOfTags-1;i++){
         if (clarifaiTagsArray[i].indexOf(partyScene) > -1) {
             deviations = Math.random();
@@ -118,7 +122,7 @@ function createAlgorithm() {
             energy += deviations;
             loudness += 10 + (deviations * 10 + 1);
             tempo += deviations * 20;
-            mood = "exciting";
+            mood2 = "exciting";
 
         } else if (clarifaiTagsArray[i].indexOf(gymScene) > -1) {
             deviations = Math.random();
@@ -127,7 +131,7 @@ function createAlgorithm() {
             song_hotness += deviations * 0.07;
             loudness += 10 + (deviations * 10 + 1);
             tempo += deviations * 20;
-            mood = "exciting";
+            mood2 = "exciting";
 
 
         } else if (clarifaiTagsArray[i].indexOf(library) > -1) {
@@ -144,6 +148,10 @@ function createAlgorithm() {
 
         } else if (clarifaiTagsArray[i].indexOf("outdoors") > -1) {
             deviations = Math.random();
+            if (tempo > 0) { }
+            else {
+                tempoMax += deviations*20;
+            }
         }
     }
 }
