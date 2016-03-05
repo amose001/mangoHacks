@@ -17,6 +17,9 @@
         <a id="clarifai" href="/getTag">Test Clarifai</a>
         <br>
         <br>
+        <!--<a class="btn-default" id="clarifai" href="/getTag">This is for Login</a>-->
+        <br>
+        <br>
         <button class="btn-default" id='get_song' onclick='spotifyPlaylist()'>This Creates Playlist</button>
         <br>
         <button class="btn-default" id='get_echo' onclick='getEchonestTags()'>Generate Echonest</button>
@@ -40,3 +43,12 @@
 		<script src="js/spotify_echonest_main.js"></script>
     </body>
 </html>
+<script id="oauth-template" type="text/x-handlebars-template">
+    <h2>oAuth info</h2>
+    <dl class="dl-horizontal">
+        <dt>Access token</dt>
+        <dd class="text-overflow">{{access_token}}</dd>
+        <dt>Refresh token</dt>
+        <dd class="text-overflow">{{refresh_token}}></dd>
+    </dl>
+</script>
