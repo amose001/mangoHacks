@@ -27,7 +27,7 @@ function getEchonestTags() {
                     function (data2) {
 
                         if (data2.is_playable == true) {
-                            console.log(data2);
+                            console.log(songID[2]);
                             datas.push(songID[2])
                         }
                     })
@@ -42,7 +42,8 @@ function spotifyPlaylist() {
     if (echonestBegin == null) {
         console.log("problem calling echonest");
     }
-    var playlistLink = "https://embed.spotify.com/?uri=spotify:track:"
+    var playlistLink = "https://embed.spotify.com/?uri=spotify:track:PREFEREDTITLE:"
+    console.log("%s\n",datas.length);
     for (var i = 0; i < datas.length-1; i++) {
         playlistLink += datas[i];
         if (i < datas.length-2) {
