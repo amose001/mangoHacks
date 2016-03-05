@@ -7,6 +7,7 @@ var datas = [];
 var clarifaiTagsArray=[];
 
 function buildClarifaiArray(list){
+	clarifaiTagsArray = [];
 	clarifaiTagsArray = list.slice(0);
 	console.log(clarifaiTagsArray);
 
