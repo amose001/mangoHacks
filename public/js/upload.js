@@ -5,24 +5,14 @@ function readURL(input) {
     reader.onload = function (e) {
       $('#blah')
       .attr('src', e.target.result)
-      // var orientation = get_orientation(e.target.result)
-      // if(orientation == 'landscape') {
-        // .width(640)
-        // .height(360);
-      // }
-    //   else if (orientation == 'portrait') {
-        .width(360)
-        .height(640);
-    //   }
-    //   else {
-    //     .width(640)
-    //     .height(640);
-    //   }
+
+      .width(360)
+      .height(640);
     };
     reader.readAsDataURL(input.files[0]);
   }
 }
-
+/*
 function get_orientation(src){
 
   img = new Image();
@@ -41,3 +31,4 @@ function get_orientation(src){
   }
 
 }
+*/
