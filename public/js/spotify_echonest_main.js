@@ -5,7 +5,7 @@ var echo_nest = 'http://developer.echonest.com/api/v4/';
 var echo_api_id = 'G92VW09ZBNGLUVN8C';
 var datas = [];
 var clarifaiTagsArray=[];
-var tempo, tempoMax, danceability, energy, acousticness, loudness, liveness, song_hotness, mood2;
+var tempo=0, tempoMax=0, danceability=0, energy=0, acousticness=0, loudness=0, liveness=0, song_hotness=0, mood2='happy';
 
 function buildClarifaiArray(list){
 	clarifaiTagsArray = [];
@@ -20,13 +20,13 @@ function getEchonestTags() {
     $.ajaxSetup({ traditional: true });
     $.getJSON(url, { 'format':'json',
         api_key: echo_api_id,
-        min_tempo:tempo,
-        max_tempo: tempoMax,
-        min_danceability: danceability,
-        min_energy: energy,
-        min_acousticness: acousticness,
-        min_loudness: loudness,
-        min_liveness: liveness,
+        min_tempo:tempo.toString(),
+        max_tempo: tempoMax.toString(),
+        min_danceability: danceability.toString(),
+        min_energy: energy.toString(),
+        min_acousticness: acousticness.toString(),
+        min_loudness: loudness.toString(),
+        min_liveness: liveness.toString(),
         mood:mood2,
 
         results: '30',
