@@ -38,6 +38,10 @@ function getEchonestTags() {
 };
 
 function spotifyPlaylist() {
+    var echonestBegin = getEchonestTags();
+    if (echonestBegin == null) {
+        console.log("problem calling echonest");
+    }
     var playlistLink = "https://embed.spotify.com/?uri=spotify:track:"
     for (var i = 0; i < datas.length-1; i++) {
         playlistLink += datas[i];
