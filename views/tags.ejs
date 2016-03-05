@@ -6,7 +6,6 @@
 		<!-- <script src="js/Clarifai_part.js"></script>-->        
         <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
         <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
-        <script src="js/upload.js"></script>
 		<!-- css -->
 		<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css"> <!-- pureform -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -15,6 +14,8 @@
 		<script type='text/javascript'>
 			var unparsedTags = "<%= tags %>";
 			clarifaiTagsArray = unparsedTags.split(",");
+			console.log(clarifaiTagsArray);
+			buildClarifaiArray(clarifaiTagsArray);
 		</script>
 	</head>
 	<body>
@@ -29,6 +30,11 @@
 			Generate Echonest
 		</button>
         <br>
+		<form method="post" enctype="multipart/form-data" action="/">
+			 <p><input type="text" name="title" placeholder="title"/></p>
+			 <p><input type="file" name="upl"/></p>
+	     	 <p><input type="submit"/></p>
+		 </form>
         <!-- old code -->
         <!-- <input type='file' onchange="readURL(this);" />
         <img id="blah" src="#" alt="your image" /> -->
@@ -41,9 +47,5 @@
             <label id="playSongs"></label>
         </div>
 
-		<!-- javascript -->
-		<script src="js/upload.js"></script>
-		<!--<script src="js/Clarifai_part.js"></script>-->
-		<script src="js/spotify_echonest_main.js"></script>
     </body>
 </html>

@@ -5,9 +5,16 @@ var echo_nest = 'http://developer.echonest.com/api/v4/';
 var echo_api_id = 'G92VW09ZBNGLUVN8C';
 var datas = [];
 var clarifaiTagsArray=[];
+
+function buildClarifaiArray(list){
+	clarifaiTagsArray = list.slice(0);
+	console.log(clarifaiTagsArray);
+
+}
 function getEchonestTags() {
     console.log("Opening EchonestTags");
     var url = echo_nest + 'song/search';
+	console.log(clarifaiTagsArray);
     $.ajaxSetup({ traditional: true });
     $.getJSON(url, { 'format':'json',
         api_key: echo_api_id,
