@@ -49,7 +49,7 @@ function getEchonestTags() {
         console.log("got out of loop\n");
 	//	spotifyPlaylist();
     }).done(function () {
-        spotifyPlaylist();
+        //spotifyPlaylist();
     });
     console.log("I got here, out of the functions\n");
     // var myFunction = setTimeout(spotifyPlaylist, 2000);
