@@ -45,6 +45,7 @@ function spotifyPlaylist() {
             playlistLink += ','
         }
     }
+    console.log(playlistLink);
     var spotifyPlaylist = document.createElement('iframe');
     spotifyPlaylist.allowtransparency = "true";
     spotifyPlaylist.frameBorder = "0";
