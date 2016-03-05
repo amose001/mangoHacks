@@ -6,13 +6,13 @@ var echo_api_id = 'G92VW09ZBNGLUVN8C';
 var datas = [];
 function getEchonestTags() {
     console.log("Opening EchonestTags");
-var url = echo_nest + 'song/search';
-$.ajaxSetup({ traditional: true });
-$.getJSON(url, { 'format':'json',
+    var url = echo_nest + 'song/search';
+    $.ajaxSetup({ traditional: true });
+    $.getJSON(url, { 'format':'json',
     api_key: echo_api_id,
     bucket: ['id:spotify','tracks'], // this must stay the same
     mood: 'happy' //This will be changed to whatever we determine as our algorithm from clarifai
-},
+    },
     function (data) {
         numOfSongs = data.response.songs.length;
         var i;
@@ -20,7 +20,7 @@ $.getJSON(url, { 'format':'json',
             if (data.response.songs[i].tracks[0] != null) {
                 var myJSONObject = data.response.songs[i].tracks[0].foreign_id;
                 songID = myJSONObject.split(":");
-                console.log(songID[2]);
+                //console.log(songID[2]);
                 datas.push(songID[2]);
                 var spotifyCheckURL = "https://api.spotify.com/v1/tracks/" + songID[2] + "?market=US";
                 $.getJSON(spotifyCheckURL,
