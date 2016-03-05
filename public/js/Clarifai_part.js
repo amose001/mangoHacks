@@ -27,7 +27,6 @@ exports.getTags = function() {
 	var imageURL = 'http://i.imgur.com/b7mzeLI.jpg';
 	var imageId = "uploadedImage";
 	Clarifai.tagURL( imageURL , imageId, resultHandler );
-	console.log("test");
 }
 
 

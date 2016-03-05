@@ -2,8 +2,10 @@
 var express = require('express');
 var app 	= express();
 var path	= require('path');
-var 	part = require('./libs/Clarifai_part.js');
-var Clarifai = require('./libs/clarifai_node.js');
+var 	part = require('./public/js/Clarifai_part.js');
+
+/*
+var Clarifai = require('./public/js/clarifai_node.js');
 
 var CLIENT_ID = "7vnVnwWoY7heeIvNlVatC--4uMgdPGRUYa_LpX6V";
 var CLIENT_SECRET = "T_eDYqVrqeEHoP5ZgD99BxX2ybjOIoxTWmAxboq8";
@@ -27,7 +29,7 @@ function igetTags(){
 	var imageID = "uploadedImage";
 	Clarifai.tagURL(imageURL, imageID, resultHandler);
 }
-
+*/
 //console.log(part);
 part.getTags();
 //Clarifai starts here
