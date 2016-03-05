@@ -21,14 +21,14 @@ function getEchonestTags() {
                 var myJSONObject = data.response.songs[i].tracks[0].foreign_id;
                 songID = myJSONObject.split(":");
                 //console.log(songID[2]);
-                datas.push(songID[2]);
+                //datas.push(songID[2]);
                 var spotifyCheckURL = "https://api.spotify.com/v1/tracks/" + songID[2] + "?market=US";
                 $.getJSON(spotifyCheckURL,
                     function (data2) {
 
                         if (data2.is_playable == true) {
                             console.log(songID[2]);
-                            datas.push(songID[2])
+                            datas.push(songID[2]);
                         }
                     })
             }
