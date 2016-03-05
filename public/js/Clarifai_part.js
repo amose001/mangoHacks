@@ -1,4 +1,5 @@
 // JavaScript source code
+
 var Clarifai = require('./clarifai_node.js');
 var process.env.CLARIFAI_ID = "7vnVnwWoY7heeIvNlVatC--4uMgdPGRUYa_LpX6V";
 var process.env.CLARIFAI_SECRET = "T_eDYqVrqeEHoP5ZgD99BxX2ybjOIoxTWmAxboq8";
@@ -8,7 +9,6 @@ var tags = [];
 function getTags() {
 	var imageURL = '';//url of the image that was uploaded
 	var imageId = "uploadedImage";
-
 	Clarifai.tagURL( imageURL , imageId, resultHandler );
 }
 
