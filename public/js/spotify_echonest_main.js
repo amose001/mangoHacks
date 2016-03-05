@@ -48,21 +48,22 @@ function spotifyPlaylist() {
     if (echonestBegin == null) {
         console.log("problem calling echonest");
     }
-    var playlistLink = "https://embed.spotify.com/?uri=spotify:track:PREFEREDTITLE:"
-    console.log("%s\n",datas.length);
-    for (var i = 0; i < datas.length-1; i++) {
-        playlistLink += datas[i];
-        if (i < datas.length-2) {
-            playlistLink += ','
+    else {
+        var playlistLink = "https://embed.spotify.com/?uri=spotify:track:PREFEREDTITLE:"
+        console.log("%s\n", datas.length);
+        for (var i = 0; i < datas.length - 1; i++) {
+            playlistLink += datas[i];
+            if (i < datas.length - 2) {
+                playlistLink += ','
+            }
         }
+        console.log(playlistLink);
+        var spotifyPlaylist = document.createElement('iframe');
+        spotifyPlaylist.allowtransparency = "true";
+        spotifyPlaylist.frameBorder = "0";
+        spotifyPlaylist.src = playlistLink;
+
+        var playLabel = document.getElementById('playSongs');
+        playLabel.insertBefore(spotifyPlaylist, playLabel);
     }
-    console.log(playlistLink);
-    var spotifyPlaylist = document.createElement('iframe');
-    spotifyPlaylist.allowtransparency = "true";
-    spotifyPlaylist.frameBorder = "0";
-    spotifyPlaylist.src=playlistLink;
-
-    var playLabel = document.getElementById('playSongs');
-    playLabel.insertBefore(spotifyPlaylist,playLabel);
-
 }
