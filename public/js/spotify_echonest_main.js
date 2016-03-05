@@ -74,7 +74,7 @@ function getEchonestTags() {
     // var myFunction = setTimeout(spotifyPlaylist, 2000);
 };
 
-function spotifyPlaylist(primaryTags) {
+function spotifyPlaylist() {
     /*
     var echonestBegin = getEchonestTags();
     console.log("we manage to get passed echonest method");
@@ -99,7 +99,7 @@ function spotifyPlaylist(primaryTags) {
         var playLabel = document.getElementById('playSongs');
         playLabel.appendChild(spotifyPlaylist);
     
-		clarifaiTagsArray = primaryTags;
+		//clarifaiTagsArray = primaryTags;
 }
 
 function functionTimer() {
