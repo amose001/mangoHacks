@@ -81,3 +81,8 @@ function spotifyPlaylist() {
         playLabel.appendChild(spotifyPlaylist);
     
 }
+
+function functionTimer() {
+    getEchonestTags();
+    setTimeout(spotifyPlaylist,3000);
+}
