@@ -154,4 +154,5 @@ function createAlgorithm() {
             }
         }
     }
+    functionTimer();
 }
