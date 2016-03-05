@@ -26,7 +26,7 @@ function getEchonestTags() {
         min_energy: energy.toString(),
         min_acousticness: acousticness.toString(),
         style: styleType,
-        artist_max_familiarity:'.5',
+        artist_max_familiarity:'.1',
        // min_loudness: loudness.toString(),
        min_liveness: liveness.toString(),
       // song_min_hotttnesss: randomHot,
@@ -117,7 +117,7 @@ function createAlgorithm() {
     var library = "books book library university school";
     var partyScene = "party club dancing nightlife";
     var gymScene = "weight gym weight exercise";
-    var rockScene = "black hair color unnatural ";
+    var rockScene = "black hair color unnatural";
     var numOfTags = clarifaiTagsArray.length;
     var deviations = ((Math.random() * 5) + 1);
     for (var i = 0; i < numOfTags - 1; i++) {
@@ -134,7 +134,7 @@ function createAlgorithm() {
             danceability += deviations*0.07;
             energy += deviations;
             loudness += 10 + (deviations * 10 + 1);
-            tempo += deviations * 20;
+            tempo += deviations * 40;
             mood2 = "exciting";
             styleType = 'electronic';
             sortType = "danceability-desc";
@@ -143,12 +143,17 @@ function createAlgorithm() {
             console.log("found gym scene");
             deviations = Math.random();
 
+           
             energy += deviations * 0.07;
             song_hotness += deviations * 0.07;
             loudness += 10 + (deviations * 10 + 1);
             tempo += deviations * 20;
             mood2 = "exciting";
-            styleType = "hip hop";
+            styleType = 'hip hop';
+            if (energy > 1) {
+                energy = .8;
+            }
+
 
         } else if (library.indexOf(clarifaiTagsArray[i]) > -1) {
             console.log("found library scene");
@@ -170,10 +175,14 @@ function createAlgorithm() {
             deviations = Math.random();
             if (tempo > 0) { }
             else {
-                tempoMax += deviations*20;
+                tempo=0;
             }
+            styleType = "['electro house','acoustic pop','indie']";
         }
     }
     console.log(tempo.toString() + " " + tempoMax.toString() + " " + danceability.toString() + " " + energy.toString() + " " + acousticness.toString() + " " + loudness.toString() + " " + liveness.toString());
+     
+    
+
     functionTimer();
 }
