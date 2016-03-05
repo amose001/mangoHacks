@@ -34,6 +34,8 @@ function getEchonestTags() {
                             datas.push(data2.id);
                             console.log("%s", datas.length);
                         }
+                    }).done(function () {
+                        spotifyPlaylist();
                     })
 
 
