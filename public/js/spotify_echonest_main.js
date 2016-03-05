@@ -5,7 +5,7 @@ var echo_nest = 'http://developer.echonest.com/api/v4/';
 var echo_api_id = 'G92VW09ZBNGLUVN8C';
 var datas = [];
 function getEchonestTags() {
-
+    console.log("Opening EchonestTags");
 var url = echo_nest + 'song/search';
 $.ajaxSetup({ traditional: true });
 $.getJSON(url, { 'format':'json',
