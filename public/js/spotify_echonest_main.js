@@ -14,10 +14,10 @@ function getEchonestTags() {
         results: '30',
         //song_type:'indie',
         //min_acousticness: '.5',
-        min_tempo:'250',
+        min_tempo:'100',
         min_liveness:'.5',
     bucket: ['id:spotify','tracks'], // this must stay the same
-    mood: 'relaxing' //This will be changed to whatever we determine as our algorithm from clarifai
+    mood: 'happy' //This will be changed to whatever we determine as our algorithm from clarifai
     },
     function (data) {
         numOfSongs = data.response.songs.length;
