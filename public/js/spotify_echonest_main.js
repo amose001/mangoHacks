@@ -38,6 +38,19 @@ function getEchonestTags() {
 };
 
 function spotifyPlaylist() {
+    var playlistLink = "https://embed.spotify.com/?uri=spotify:track:"
+    for (var i = 0; i < datas.length-1; i++) {
+        playlistLink += datas[i];
+        if (i < datas.length-2) {
+            playlistLink += ','
+        }
+    }
+    var spotifyPlaylist = document.createElement('iframe');
+    spotifyPlaylist.allowtransparency = "true";
+    spotifyPlaylist.frameBorder = "0";
+    spotifyPlaylist.src=playlistLink;
 
+    var playLabel = document.getElementById('playSongs');
+    playLabel.insertBefore(spotifyPlaylist,playLabel);
 
 }
