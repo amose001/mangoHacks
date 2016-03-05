@@ -11,7 +11,7 @@ function getEchonestTags() {
     $.getJSON(url, { 'format':'json',
     api_key: echo_api_id,
     bucket: ['id:spotify','tracks'], // this must stay the same
-    mood: 'happy' //This will be changed to whatever we determine as our algorithm from clarifai
+    mood: 'sad' //This will be changed to whatever we determine as our algorithm from clarifai
     },
     function (data) {
         numOfSongs = data.response.songs.length;
