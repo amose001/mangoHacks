@@ -4,6 +4,7 @@ var Clarifai = require('./clarifai_node.js');
 var CLARIFAI_ID = "7vnVnwWoY7heeIvNlVatC--4uMgdPGRUYa_LpX6V";
 var CLARIFAI_SECRET = "T_eDYqVrqeEHoP5ZgD99BxX2ybjOIoxTWmAxboq8";
 Clarifai.initAPI(CLARIFAI_ID, CLARIFAI_SECRET);
+var server = require('../server.js');
 exports.tags = [];
 //var exports = module.exports = {};
 
@@ -24,7 +25,10 @@ function resultHandler( err, res ) {
 }
 
 exports.getTags = function() {
-	var imageURL = 'http://i.imgur.com/FspNFz2.jpg';
+	console.log("KANYEHAMEHA");
+	console.log(server.URL);
+	var imageURL = 'http://i.imgur.com/72zJC8Y.jpg';
+//	var imageURL ="../public/" + server.URL;
 	var imageId = "uploadedImage";
 	Clarifai.tagURL( imageURL , imageId, resultHandler );
 	return exports.tags;

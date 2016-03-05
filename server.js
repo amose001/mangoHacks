@@ -8,7 +8,7 @@ var part = require('./app/Clarifai_part.js');
 var client_id = 'c0f7afc3520542959e587d2249cda4e1'; // Your client id
 var client_secret = '8f15c046151345d88cb373847dece382'; // Your client secret
 var redirect_uri = 'http://localhost:3000/callback'; // Your redirect uri
-
+exports.URL = '';
 app.use(bodyParser.json());
 
 //view engine setup
@@ -36,6 +36,7 @@ app.post('/', multer({ dest: './uploads/'}).single('upl'), function(req,res){
 	{ title: 'abc' }
 	 */
 	console.log(req.file); //form files
+	exports.URL = req.file.path;
 	/* example output:
             { fieldname: 'upl',
               originalname: 'grumpy.png',
