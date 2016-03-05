@@ -3,7 +3,7 @@
 var Clarifai = require('./clarifai_node.js');
 var CLARIFAI_ID = "7vnVnwWoY7heeIvNlVatC--4uMgdPGRUYa_LpX6V";
 var CLARIFAI_SECRET = "T_eDYqVrqeEHoP5ZgD99BxX2ybjOIoxTWmAxboq8";
-Clarifai.initAPI(process.env.CLARIFAI_ID, process.env.CLARIFAI_SECRET);
+Clarifai.initAPI(CLARIFAI_ID, CLARIFAI_SECRET);
 var tags = [];
 
 function getTags() {
