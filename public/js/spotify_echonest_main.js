@@ -5,7 +5,7 @@ var echo_nest = 'http://developer.echonest.com/api/v4/';
 var echo_api_id = 'G92VW09ZBNGLUVN8C';
 var datas = [];
 var clarifaiTagsArray=[];
-var tempo = 0, tempoMax = 0, danceability = 0, energy = 0, acousticness = 0, loudness = 0, liveness = 0, song_hotness = 0, mood2 = 'happy', sortType = "artist_familiarity-desc";
+var tempo = 0, tempoMax = 0, styleType='rock', danceability = 0, energy = 0, acousticness = 0, loudness = 0, liveness = 0, song_hotness = 0, mood2 = 'happy', sortType = "artist_familiarity-asc";
 var randomHot = Math.random()*.8;
 function buildClarifaiArray(list){
 	clarifaiTagsArray = [];
@@ -24,14 +24,16 @@ function getEchonestTags() {
         //max_tempo: tempoMax.toString(),
         min_danceability: danceability.toString(),
         min_energy: energy.toString(),
-       min_acousticness: acousticness.toString(),
+        min_acousticness: acousticness.toString(),
+        style: styleType,
+        artist_max_familiarity:'.1',
        // min_loudness: loudness.toString(),
        min_liveness: liveness.toString(),
       // song_min_hotttnesss: randomHot,
         //sort:sortType,
         mood:mood2,
 
-        results: '30',
+        results: '50',
     bucket: ['id:spotify','tracks'], // this must stay the same
     },
     function (data) {
@@ -115,7 +117,7 @@ function createAlgorithm() {
     var library = "books book library university school";
     var partyScene = "party club dancing nightlife";
     var gymScene = "weight gym weight exercise";
-    var rockScene = "black hair color unnatural ";
+    var rockScene = "black hair color unnatural";
     var numOfTags = clarifaiTagsArray.length;
     var deviations = ((Math.random() * 5) + 1);
     for (var i = 0; i < numOfTags - 1; i++) {
@@ -132,8 +134,9 @@ function createAlgorithm() {
             danceability += deviations*0.07;
             energy += deviations;
             loudness += 10 + (deviations * 10 + 1);
-            tempo += deviations * 20;
+            tempo += deviations * 40;
             mood2 = "exciting";
+            styleType = 'electronic';
             sortType = "danceability-desc";
 
         } else if (gymScene.indexOf(clarifaiTagsArray[i]) > -1) {
@@ -145,14 +148,14 @@ function createAlgorithm() {
             loudness += 10 + (deviations * 10 + 1);
             tempo += deviations * 20;
             mood2 = "exciting";
-
+            styleType = "hip hop";
 
         } else if (library.indexOf(clarifaiTagsArray[i]) > -1) {
             console.log("found library scene");
             deviations = Math.random();
             console.log(deviations + "\n");
             acousticness += deviations*.8 ;
-
+            styleType = 'indie';
 
         } else if (rockScene.indexOf(clarifaiTagsArray[i]) > -1) {
             deviations = Math.random();
@@ -172,5 +175,8 @@ function createAlgorithm() {
         }
     }
     console.log(tempo.toString() + " " + tempoMax.toString() + " " + danceability.toString() + " " + energy.toString() + " " + acousticness.toString() + " " + loudness.toString() + " " + liveness.toString());
+
+    
+
     functionTimer();
 }
