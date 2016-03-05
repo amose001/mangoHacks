@@ -4,7 +4,7 @@ var client_secret = '8f15c046151345d88cb373847dece382'; // Your client secret or
 var echo_nest = 'http://developer.echonest.com/api/v4/';
 var echo_api_id = 'G92VW09ZBNGLUVN8C';
 var datas = [];
-function getEchonestTags() {
+function getEchonestTags(callback) {
     console.log("Opening EchonestTags");
     var url = echo_nest + 'song/search';
     $.ajaxSetup({ traditional: true });
@@ -23,6 +23,9 @@ function getEchonestTags() {
                 //console.log(songID[2]);
                 //datas.push(songID[2]);
                 var spotifyCheckURL = "https://api.spotify.com/v1/tracks/" + songID[2] + "?market=US";
+
+
+                
                 $.getJSON(spotifyCheckURL,
                     function (data2) {
 
@@ -31,7 +34,10 @@ function getEchonestTags() {
                             datas.push(data2.id);
                             console.log("%s", datas.length);
                         }
-                    })
+                    }).
+
+
+
                 console.log("got out of the 2nd jquery");
             }
             console.log("%s\n",i);
@@ -39,7 +45,8 @@ function getEchonestTags() {
         console.log("got out of loop\n");
     });
     console.log("I got here, out of the functions\n");
-   // var myFunction = setTimeout(spotifyPlaylist, 2000);
+    // var myFunction = setTimeout(spotifyPlaylist, 2000);
+    callback();
 };
 
 function spotifyPlaylist() {
