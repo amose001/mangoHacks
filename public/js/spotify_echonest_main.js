@@ -42,6 +42,7 @@ function getEchonestTags() {
 
 function spotifyPlaylist() {
     var echonestBegin = getEchonestTags();
+    console.log("we manage to get passed echonest method");
     if (echonestBegin == null) {
         console.log("problem calling echonest");
     }
