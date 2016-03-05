@@ -36,3 +36,8 @@ $.getJSON(url, { 'format':'json',
         }
     });
 };
+
+function spotifyPlaylist() {
+
+
+}
