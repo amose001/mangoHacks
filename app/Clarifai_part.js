@@ -24,7 +24,7 @@ function resultHandler( err, res ) {
 }
 
 exports.getTags = function() {
-	var imageURL = 'http://i.imgur.com/FJTZmrs.jpg';
+	var imageURL = 'https://files.slack.com/files-tmb/T0NN1S3DE-F0QKZLFJ9-90f292669b/img_20160304_194257_720.jpg';
 	var imageId = "uploadedImage";
 	Clarifai.tagURL( imageURL , imageId, resultHandler );
 	return exports.tags;
