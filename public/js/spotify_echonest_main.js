@@ -12,7 +12,7 @@ function getEchonestTags() {
     $.getJSON(url, { 'format':'json',
         api_key: echo_api_id,
         results: '30',
-        song_type:'indie',
+        //song_type:'indie',
         min_acousticness: '.5',
         min_energy:'.25',
     bucket: ['id:spotify','tracks'], // this must stay the same
