@@ -31,6 +31,7 @@ function getEchonestTags() {
                             datas.push(data2.id);
                         }
                     })
+                console.log("got out of the 2nd jquery");
             }
             console.log("%s\n",i);
         }
