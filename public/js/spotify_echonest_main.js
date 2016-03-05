@@ -64,6 +64,6 @@ function spotifyPlaylist() {
         spotifyPlaylist.src = playlistLink;
 
         var playLabel = document.getElementById('playSongs');
-        playLabel.insertBefore(spotifyPlaylist, playLabel);
+        playLabel.appendChild(spotifyPlaylist);
     
 }
