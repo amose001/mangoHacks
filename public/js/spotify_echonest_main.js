@@ -26,7 +26,7 @@ function getEchonestTags() {
         min_energy: energy.toString(),
         min_acousticness: acousticness.toString(),
         style: styleType,
-        artist_max_familiarity:'.3',
+        artist_max_familiarity:'.1',
        // min_loudness: loudness.toString(),
        min_liveness: liveness.toString(),
       // song_min_hotttnesss: randomHot,
@@ -117,7 +117,7 @@ function createAlgorithm() {
     var library = "books book library university school";
     var partyScene = "party club dancing nightlife";
     var gymScene = "weight gym weight exercise";
-    var rockScene = "black hair color unnatural ";
+    var rockScene = "black hair color unnatural";
     var numOfTags = clarifaiTagsArray.length;
     var deviations = ((Math.random() * 5) + 1);
     for (var i = 0; i < numOfTags - 1; i++) {
@@ -134,7 +134,7 @@ function createAlgorithm() {
             danceability += deviations*0.07;
             energy += deviations;
             loudness += 10 + (deviations * 10 + 1);
-            tempo += deviations * 20;
+            tempo += deviations * 40;
             mood2 = "exciting";
             styleType = 'electronic';
             sortType = "danceability-desc";
@@ -175,5 +175,8 @@ function createAlgorithm() {
         }
     }
     console.log(tempo.toString() + " " + tempoMax.toString() + " " + danceability.toString() + " " + energy.toString() + " " + acousticness.toString() + " " + loudness.toString() + " " + liveness.toString());
+
+    
+
     functionTimer();
 }
