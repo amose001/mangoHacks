@@ -113,7 +113,7 @@ function functionTimer() {
     setTimeout(spotifyPlaylist,4000);
 }
 
-function createAlgorithm(rgb) {
+function createAlgorithm() {
     var library = "books book library university school";
     var partyScene = "party club dancing nightlife";
     var gymScene = "weight gym weight exercise";
