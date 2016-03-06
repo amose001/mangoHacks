@@ -48,11 +48,11 @@ function getEchonestTags() {
 
                 console.log(songID[2]);
                // datas.push(songID[2]);
-				
+
                 var spotifyCheckURL = "https://api.spotify.com/v1/tracks/" + songID[2] + "?market=US";
 
 
-                
+
                 $.getJSON(spotifyCheckURL,
                     function (data2) {
 
@@ -104,7 +104,7 @@ function spotifyPlaylist() {
 
         var playLabel = document.getElementById('playSongs');
         playLabel.appendChild(spotifyPlaylist);
-    
+
 		//clarifaiTagsArray = primaryTags;
 }
 
@@ -120,6 +120,8 @@ function createAlgorithm(rgb) {
     var rockScene = "black hair color unnatural";
     var numOfTags = clarifaiTagsArray.length;
     var deviations = ((Math.random() * 5) + 1);
+		var rgb = new ColorFinder().getMostProminentColor(document.getElementById('image'));
+		document.getElementById("color").style.backgroundColor = 'rgb(' + rgb.r + ', ' + rgb.g + ', ' + rgb.b + ')';
     colorAnalysis(rgb.r, rgb.g, rgb.b);
     for (var i = 0; i < numOfTags - 1; i++) {
         var bob = "library";
@@ -144,7 +146,7 @@ function createAlgorithm(rgb) {
             console.log("found gym scene");
             deviations = Math.random();
 
-           
+
             energy += deviations * 0.07;
             song_hotness += deviations * 0.07;
             loudness += 10 + (deviations * 10 + 1);
@@ -182,8 +184,8 @@ function createAlgorithm(rgb) {
         }
     }
     console.log(tempo.toString() + " " + tempoMax.toString() + " " + danceability.toString() + " " + energy.toString() + " " + acousticness.toString() + " " + loudness.toString() + " " + liveness.toString());
-     
-    
+
+
 
     functionTimer();
 }
