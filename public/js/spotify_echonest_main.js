@@ -143,12 +143,17 @@ function createAlgorithm() {
             console.log("found gym scene");
             deviations = Math.random();
 
+           
             energy += deviations * 0.07;
             song_hotness += deviations * 0.07;
             loudness += 10 + (deviations * 10 + 1);
             tempo += deviations * 20;
             mood2 = "exciting";
             styleType = 'hip hop';
+            if (energy > 1) {
+                energy = .8;
+            }
+
 
         } else if (library.indexOf(clarifaiTagsArray[i]) > -1) {
             console.log("found library scene");
