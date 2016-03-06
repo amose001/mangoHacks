@@ -1,4 +1,5 @@
 //load express package and create our app
+var fs		= require('fs');
 var express = require('express');
 var multer	= require('multer');
 var bodyParser = require('body-parser');
@@ -30,7 +31,7 @@ app.get('./public/', function(req, res)
 	res.sender('index');
 });
 
-app.post('/', multer({ dest: './uploads/'}).single('upl'), function(req,res){
+app.post('/', multer({ dest: './public/uploads/'}).single('upl'), function(req,res){
 	console.log(req.body); //form fields
 	/* example output:
 	{ title: 'abc' }
@@ -47,6 +48,17 @@ app.post('/', multer({ dest: './uploads/'}).single('upl'), function(req,res){
               path: 'uploads/436ec561793aa4dc475a88e84776b1b9',
               size: 277056 }
 	 */
+	var cat = req.file.destination.concat(req.file.originalname);
+	//console.log(cat);
+	//req.file.filename = req.file.originalname
+	//console.log(req.file.filename);
+	fs.rename(req.file.path, cat, function (err) {
+		  if (err) throw err;
+		    fs.stat(cat, function (err, stats) {
+				    if (err) throw err;
+					    console.log('stats: ' + JSON.stringify(stats));
+		 });
+	});
 	res.status(204).end();
 });
 
