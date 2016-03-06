@@ -119,12 +119,12 @@ function createAlgorithm() {
     var deviations = ((Math.random() * 5) + 1);
     for (var i = 0; i < numOfTags - 1; i++) {
         var bob = "library";
-        var k = bob.indexOf(library);
+        var k = bob.indexOf(library.toString());
         if (k >= 0) {
             console.log("This works");
         }
         console.log(clarifaiTagsArray[i] + "\n");
-        if (clarifaiTagsArray[i].toString().indexOf(partyScene) > -1) {
+        if (clarifaiTagsArray[i].toString().indexOf(partyScene.toString()) > -1) {
             console.log("found party scene");
             deviations = Math.random();
 
@@ -135,7 +135,7 @@ function createAlgorithm() {
             mood2 = "exciting";
             sortType = "danceability-desc";
 
-        } else if (clarifaiTagsArray[i].toString().indexOf(gymScene) > -1) {
+        } else if (clarifaiTagsArray[i].toString().indexOf(gymScene.toString()) > -1) {
             console.log("found gym scene");
             deviations = Math.random();
 
@@ -146,14 +146,14 @@ function createAlgorithm() {
             mood2 = "exciting";
 
 
-        } else if (clarifaiTagsArray[i].toString().indexOf(library) > -1) {
+        } else if (clarifaiTagsArray[i].toString().indexOf(library.toString()) > -1) {
             console.log("found library scene");
             deviations = Math.random();
             console.log(deviations + "\n");
             acousticness += deviations ;
 
 
-        } else if (clarifaiTagsArray[i].toString().indexOf(rockScene) > -1) {
+        } else if (clarifaiTagsArray[i].toString().indexOf(rockScene.toString()) > -1) {
             deviations = Math.random();
 
 
