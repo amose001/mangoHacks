@@ -113,13 +113,14 @@ function functionTimer() {
     setTimeout(spotifyPlaylist,4000);
 }
 
-function createAlgorithm() {
+function createAlgorithm(rgb) {
     var library = "books book library university school";
     var partyScene = "party club dancing nightlife";
     var gymScene = "weight gym weight exercise";
     var rockScene = "black hair color unnatural";
     var numOfTags = clarifaiTagsArray.length;
     var deviations = ((Math.random() * 5) + 1);
+    colorAnalysis(rgb.r, rgb.g, rgb.b);
     for (var i = 0; i < numOfTags - 1; i++) {
         var bob = "library";
         var k = library.indexOf(bob);
