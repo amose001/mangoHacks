@@ -26,7 +26,7 @@ function getEchonestTags() {
         min_energy: energy.toString(),
         min_acousticness: acousticness.toString(),
         style: styleType,
-        artist_max_familiarity:'.5',
+        artist_max_familiarity:'.3',
        // min_loudness: loudness.toString(),
        min_liveness: liveness.toString(),
       // song_min_hotttnesss: randomHot,
