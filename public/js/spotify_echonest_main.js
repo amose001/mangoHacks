@@ -5,7 +5,7 @@ var echo_nest = 'http://developer.echonest.com/api/v4/';
 var echo_api_id = 'G92VW09ZBNGLUVN8C';
 var datas = [];
 var clarifaiTagsArray=[];
-var tempo = 0, tempoMax = 0, danceability = 0, energy = 0, acousticness = 0, loudness = 0, liveness = 0, song_hotness = 0, mood2 = 'happy';
+var tempo = 0, tempoMax = 0, danceability = 0, energy = 0, acousticness = 0, loudness = 0, liveness = 0, song_hotness = 0, mood2 = 'happy', sortType = "artist_familiarity-desc";
 
 function buildClarifaiArray(list){
 	clarifaiTagsArray = [];
@@ -27,7 +27,7 @@ function getEchonestTags() {
        min_acousticness: acousticness.toString(),
        // min_loudness: loudness.toString(),
        min_liveness: liveness.toString(),
-        //sort:sortType,
+        sort:sortType,
         mood:mood2,
 
         results: '30',
