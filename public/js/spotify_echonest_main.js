@@ -128,7 +128,7 @@ function createAlgorithm() {
             mood2 = "exciting";
             sortType = "danceability-desc";
 
-        } else if (clarifaiTagsArray[i].indexOf(gymScene) > -1) {
+        } if (clarifaiTagsArray[i].indexOf(gymScene) > -1) {
             deviations = Math.random();
 
             energy += deviations * 0.07;
@@ -138,21 +138,21 @@ function createAlgorithm() {
             mood2 = "exciting";
 
 
-        } else if (clarifaiTagsArray[i].indexOf(library) > -1) {
+        } if (clarifaiTagsArray[i].indexOf(library) > -1) {
             deviations = Math.random();
             console.log(deviations + "\n");
             acousticness += deviations*.9;
 
 
-        } else if (clarifaiTagsArray[i].indexOf(rockScene) > -1) {
+        } if (clarifaiTagsArray[i].indexOf(rockScene) > -1) {
             deviations = Math.random();
 
 
-        } else if (clarifaiTagsArray[i].indexOf("indoors") > -1) {
+        } if (clarifaiTagsArray[i].indexOf("indoors") > -1) {
             deviations = Math.random();
             tempo += deviations * 10;
 
-        } else if (clarifaiTagsArray[i].indexOf("outdoors") > -1) {
+        } if (clarifaiTagsArray[i].indexOf("outdoors") > -1) {
             deviations = Math.random();
             if (tempo > 0) { }
             else {
