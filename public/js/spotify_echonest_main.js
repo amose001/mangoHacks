@@ -148,7 +148,7 @@ function createAlgorithm() {
             loudness += 10 + (deviations * 10 + 1);
             tempo += deviations * 20;
             mood2 = "exciting";
-            styleType = "hip hop";
+            styleType = "['electro house','hip hop','rock']";
 
         } else if (library.indexOf(clarifaiTagsArray[i]) > -1) {
             console.log("found library scene");
@@ -170,8 +170,9 @@ function createAlgorithm() {
             deviations = Math.random();
             if (tempo > 0) { }
             else {
-                tempoMax += deviations*20;
+                tempo=0;
             }
+            styleType = "['electro house','acoustic pop','indie']";
         }
     }
     console.log(tempo.toString() + " " + tempoMax.toString() + " " + danceability.toString() + " " + energy.toString() + " " + acousticness.toString() + " " + loudness.toString() + " " + liveness.toString());
