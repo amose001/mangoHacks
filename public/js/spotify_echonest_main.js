@@ -6,7 +6,7 @@ var echo_api_id = 'G92VW09ZBNGLUVN8C';
 var datas = [];
 var clarifaiTagsArray=[];
 var tempo = 0, tempoMax = 0, danceability = 0, energy = 0, acousticness = 0, loudness = 0, liveness = 0, song_hotness = 0, mood2 = 'happy', sortType = "artist_familiarity-desc";
-
+var randomHot = Math.random()*.8;
 function buildClarifaiArray(list){
 	clarifaiTagsArray = [];
 	clarifaiTagsArray = list.slice(0);
@@ -27,7 +27,8 @@ function getEchonestTags() {
        min_acousticness: acousticness.toString(),
        // min_loudness: loudness.toString(),
        min_liveness: liveness.toString(),
-        sort:sortType,
+       song_min_hotttnesss: randomHot,
+        //sort:sortType,
         mood:mood2,
 
         results: '30',
