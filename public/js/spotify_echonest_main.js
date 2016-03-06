@@ -5,7 +5,7 @@ var echo_nest = 'http://developer.echonest.com/api/v4/';
 var echo_api_id = 'G92VW09ZBNGLUVN8C';
 var datas = [];
 var clarifaiTagsArray=[];
-var tempo=0, tempoMax=0, danceability=0, energy=0, acousticness=0, loudness=0, liveness=0, song_hotness=0, mood2='happy';
+var tempo = 0, tempoMax = 0, danceability = 0, energy = 0, acousticness = 0, loudness = 0, liveness = 0, song_hotness = 0, mood2 = 'happy', sortType = 'artist_familiarity-asc';
 
 function buildClarifaiArray(list){
 	clarifaiTagsArray = [];
@@ -27,6 +27,7 @@ function getEchonestTags() {
        min_acousticness: acousticness.toString(),
        // min_loudness: loudness.toString(),
        min_liveness: liveness.toString(),
+        sort:sortType,
         mood:mood2,
 
         results: '30',
@@ -125,6 +126,7 @@ function createAlgorithm() {
             loudness += 10 + (deviations * 10 + 1);
             tempo += deviations * 20;
             mood2 = "exciting";
+            sortType = "danceability-desc";
 
         } else if (clarifaiTagsArray[i].indexOf(gymScene) > -1) {
             deviations = Math.random();
@@ -143,6 +145,7 @@ function createAlgorithm() {
 
         } else if (clarifaiTagsArray[i].indexOf(rockScene) > -1) {
             deviations = Math.random();
+
 
         } else if (clarifaiTagsArray[i].indexOf("indoors") > -1) {
             deviations = Math.random();
