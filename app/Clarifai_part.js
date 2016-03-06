@@ -27,7 +27,9 @@ function resultHandler(err, res) {
 exports.getTags = function () {
     console.log("KANYEHAMEHA");
     console.log(server.URL);
-    var imageURL = 'http://i.imgur.com/yDpKle7.jpg';
+    //var imageURL = 'http://i.imgur.com/yDpKle7.jpg';
+    var imageURL = 'http://i.imgur.com/uD5tN09.jpg';
+
     //	var imageURL = server.URL;
     //var imageURL = 'http://localhost:3000/uploads/sun.jpg';
     console.log(imageURL);
