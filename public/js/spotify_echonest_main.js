@@ -23,7 +23,7 @@ function getEchonestTags() {
         min_tempo:tempo.toString(),
         //max_tempo: tempoMax.toString(),
         min_danceability: danceability.toString(),
-        //min_energy: energy.toString(),
+        min_energy: energy.toString(),
        // min_acousticness: acousticness.toString(),
        // min_loudness: loudness.toString(),
        // min_liveness: liveness.toString(),
