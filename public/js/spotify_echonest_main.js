@@ -148,7 +148,7 @@ function createAlgorithm() {
             loudness += 10 + (deviations * 10 + 1);
             tempo += deviations * 20;
             mood2 = "exciting";
-            styleType = "['electro house','hip hop','rock']";
+            styleType = "['hip hop']";
 
         } else if (library.indexOf(clarifaiTagsArray[i]) > -1) {
             console.log("found library scene");
