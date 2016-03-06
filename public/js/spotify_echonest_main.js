@@ -111,7 +111,7 @@ function functionTimer() {
 }
 
 function createAlgorithm() {
-    var library = "books book library university school"
+    var library = "books book library university school";
     var partyScene = "party club dancing nightlife";
     var gymScene = "weight gym weight exercise";
     var rockScene = "black hair color unnatural ";
