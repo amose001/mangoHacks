@@ -17,7 +17,7 @@
         <title>Themed Beats</title>
     </head>
     <body>
-	<div style="float: left; display: inline-block">
+	<!--<div style="float: left; display: inline-block">
         <button id="clarifai" onclick="getTags()">Test Clarifai</button>
         <br>
         <br>
@@ -26,18 +26,17 @@
         <br>
         <input type='file' onchange="readURL(this);" />
         <img id="blah" src="#" alt="your image" />
-	</div>
+	</div>-->
 
 	<div style="display: inline-block;">
-		<img id="image" src="imgs/alexis_texas.jpg" alt="The Scream" width="220" height="277">
+		<img id="image" src="imgs/alexis_texas.jpg" alt="american_whorestory" width="220" height="277">
 	</div>
 
 	<!--<input type="button" style="display:block;"
 	onclick="load()" value="find color"></input>-->
 
 	<!--Color detected: -->
-	<div id="color" style="width: 200px; height: 200px;
-						   border: 1px solid rgb(170, 170, 170);">
+	<div id="color" style="width: 220px; height: 277px;">
 	</div>
 	<!--<div style="float:left">
 		<canvas id="myCanvas" width="220" height="277" style="border:1px solid #d3d3d3;">
@@ -45,7 +44,7 @@
 	</div>-->
 	<script>
 		var rgb = new ColorFinder().getMostProminentColor(document.getElementById('image'));
-		document.getElementById("color").style.backgroundColor = 'rgb('+rgb.r+', '+rgb.b+', '+rgb.g+')';
+		document.getElementById("color").style.backgroundColor = 'rgb('+rgb.r+', '+rgb.g+', '+rgb.b+')'
 	</script>
 
 
