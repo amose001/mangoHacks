@@ -21,7 +21,7 @@ function getEchonestTags() {
     $.getJSON(url, { 'format':'json',
         api_key: echo_api_id,
         min_tempo:tempo.toString(),
-        //max_tempo: tempoMax.toString(),
+        max_tempo: tempoMax.toString(),
         //min_danceability: danceability.toString(),
         //min_energy: energy.toString(),
        // min_acousticness: acousticness.toString(),
