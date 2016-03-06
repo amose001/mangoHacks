@@ -119,7 +119,7 @@ function createAlgorithm() {
     var deviations = ((Math.random() * 5) + 1);
     for (var i = 0; i < numOfTags - 1; i++) {
         var bob = "library";
-        var k = bob.indexOf("books book library university school");
+        var k = library.indexOf(bob);
         if (k >= 0) {
             console.log("This works");
         }
