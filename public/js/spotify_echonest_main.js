@@ -119,6 +119,7 @@ function createAlgorithm() {
     var deviations = ((Math.random() * 5) + 1);
     for(var i=0;i<numOfTags-1;i++){
         if (clarifaiTagsArray[i].indexOf(partyScene) > -1) {
+            console.log("found party scene");
             deviations = Math.random();
 
             danceability += deviations*0.07;
@@ -129,6 +130,7 @@ function createAlgorithm() {
             sortType = "danceability-desc";
 
         } else if (clarifaiTagsArray[i].indexOf(gymScene) > -1) {
+            console.log("found gym scene");
             deviations = Math.random();
 
             energy += deviations * 0.07;
@@ -139,6 +141,7 @@ function createAlgorithm() {
 
 
         } else if (clarifaiTagsArray[i].indexOf(library) > -1) {
+            console.log("found library scene");
             deviations = Math.random();
             console.log(deviations + "\n");
             acousticness += deviations ;
@@ -149,6 +152,7 @@ function createAlgorithm() {
 
 
         } else if (clarifaiTagsArray[i].indexOf("indoors") > -1) {
+
             deviations = Math.random();
             tempo += deviations * 10;
 
