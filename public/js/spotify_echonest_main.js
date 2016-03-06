@@ -88,7 +88,7 @@ function spotifyPlaylist() {
         console.log("problem calling echonest");
     }
     */
-        var playlistLink = "https://embed.spotify.com/?uri=spotify:trackset:PREFEREDTITLE:"
+        var playlistLink = "https://embed.spotify.com/?uri=spotify:trackset:ThemedBeats:"
         console.log("%s\n", datas.length);
         for (var i = 0; i < datas.length - 1; i++) {
             playlistLink += datas[i];
