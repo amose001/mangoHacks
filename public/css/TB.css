@@ -2,6 +2,7 @@
 {
     display: inline-block;
     text-align: center;
+    background-color: black;
 }
 .main_play {
     display: block

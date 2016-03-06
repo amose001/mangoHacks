@@ -186,3 +186,46 @@ function createAlgorithm() {
 
     functionTimer();
 }
+
+function colorAnalysis(r,g,b) {
+    var sum = r + g + b;
+    if (sum < 90) {
+        //Black
+        mood2 = "angry";
+    } else if (sum > 600) {
+        //White
+        mood2="relaxing"
+    } else {
+        var bigNum = biggestColor(rgb.r, rgb.g, rgb.b);
+        if (bigNum == 'b') {
+            mood2 = "sad";
+        }
+        if (bigNum == 'r') {
+            mood2 = "excite";
+        }if(bigNum == 'y'){
+            styleType = 'country';
+        }
+
+    }
+
+}
+
+function biggestColor(r,g,b) {
+
+    if (r > g && r > b) {
+        if (g < b) {
+            //YELLOW
+            return "y";
+        } else {
+            //RED
+            return 'r';
+        }
+    }
+    else if (g > r && g > b) {
+        //GREEN
+        return 'g';
+    } else {
+        //BLUE
+        return 'b';
+    }
+}
