@@ -8,15 +8,17 @@
 		<!--<script src="js/Clarifai_part.js"></script>-->
         <script src="js/spotify_echonest_main.js"></script>
         <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-        <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+		<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+		<!-- script for color dominance -->
+		<script src ="js.colorfinder.js"></script>
 		<!-- css -->
 		<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css"> <!-- pureform -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="css/TB.css">
         
     </head>
-    <body>
-        <div id="main_play">
+	<body>
+		<div id="main_play">
         <a id="clarifai" href="/getTag">Test Clarifai</a>
         <br>
         <br>
@@ -24,7 +26,23 @@
         <br>
         <!--<button class="btn-default" id='get_echo' onclick='getEchonestTags()'>Generate Echonest</button>-->
         <br>
-        </div>
+	</div>
+
+	<!-- code for color dominance -->
+	<div style="display: inline-block;">
+		<img id="image" src="imgs/alexis_texas.jpg" alt="american_whorestory" width="220" height="277">
+	</div>
+
+	<!-- color detected -->
+	<div id="color" style="width: 220px; height: 277px;">
+	</div>
+
+	<script>
+		var rgb = new ColorFinder().getMostProminentColor(document.getElementById('image'));
+		document.getElementById("color").style.backgroundColor = 'rgb('+rgb.r+', '+rgb.g+', '+rgb.b+')'
+	</script>
+	<!-- end code for color dominance -->
+
         <!-- old code -->
         <!-- <input type='file' onchange="readURL(this);" />
         <img id="blah" src="#" alt="your image" /> -->
@@ -46,5 +64,7 @@
 
         </div>
 
+		<!-- javascript color dominance -->
+		<script src="js/colorfinder.js"></script>
     </body>
 </html>
