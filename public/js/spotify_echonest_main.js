@@ -150,7 +150,7 @@ function createAlgorithm() {
             console.log("found library scene");
             deviations = Math.random();
             console.log(deviations + "\n");
-            acousticness += deviations ;
+            acousticness += deviations*.8 ;
 
 
         } else if (rockScene.indexOf(clarifaiTagsArray[i]) > -1) {
