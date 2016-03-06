@@ -111,7 +111,7 @@ function functionTimer() {
 }
 
 function createAlgorithm() {
-    var library = "books book library university school";
+    var library = "books book library university school"
     var partyScene = "party club dancing nightlife";
     var gymScene = "weight gym weight exercise";
     var rockScene = "black hair color unnatural ";
@@ -128,7 +128,7 @@ function createAlgorithm() {
             mood2 = "exciting";
             sortType = "danceability-desc";
 
-        } if (clarifaiTagsArray[i].indexOf(gymScene) > -1) {
+        } else if (clarifaiTagsArray[i].indexOf(gymScene) > -1) {
             deviations = Math.random();
 
             energy += deviations * 0.07;
@@ -138,21 +138,21 @@ function createAlgorithm() {
             mood2 = "exciting";
 
 
-        } if (clarifaiTagsArray[i].indexOf(library) > -1) {
+        } else if (clarifaiTagsArray[i].indexOf(library) > -1) {
             deviations = Math.random();
             console.log(deviations + "\n");
-            acousticness += deviations*.9;
+            acousticness += deviations ;
 
 
-        } if (clarifaiTagsArray[i].indexOf(rockScene) > -1) {
+        } else if (clarifaiTagsArray[i].indexOf(rockScene) > -1) {
             deviations = Math.random();
 
 
-        } if (clarifaiTagsArray[i].indexOf("indoors") > -1) {
+        } else if (clarifaiTagsArray[i].indexOf("indoors") > -1) {
             deviations = Math.random();
             tempo += deviations * 10;
 
-        } if (clarifaiTagsArray[i].indexOf("outdoors") > -1) {
+        } else if (clarifaiTagsArray[i].indexOf("outdoors") > -1) {
             deviations = Math.random();
             if (tempo > 0) { }
             else {
