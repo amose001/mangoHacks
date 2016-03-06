@@ -1,5 +1,9 @@
 ﻿body
 {
-    display: inline;
+    display: inline-block;
     text-align: center;
+}
+.main_play {
+    display: block
+
 }
