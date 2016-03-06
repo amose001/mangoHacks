@@ -141,7 +141,7 @@ function createAlgorithm() {
         } else if (clarifaiTagsArray[i].indexOf(library) > -1) {
             deviations = Math.random();
             console.log(deviations + "\n");
-            acousticness += deviations;
+            acousticness += deviations*.9;
 
 
         } else if (clarifaiTagsArray[i].indexOf(rockScene) > -1) {
