@@ -37,7 +37,7 @@ app.post('/', multer({ dest: './public/uploads/'}).single('upl'), function(req,r
 	{ title: 'abc' }
 	 */
 	console.log(req.file); //form files
-	exports.URL = req.file.path;
+	//exports.URL = req.file.path;
 	/* example output:
             { fieldname: 'upl',
               originalname: 'grumpy.png',
@@ -57,8 +57,11 @@ app.post('/', multer({ dest: './public/uploads/'}).single('upl'), function(req,r
 		    fs.stat(cat, function (err, stats) {
 				    if (err) throw err;
 					    console.log('stats: ' + JSON.stringify(stats));
+					//	console.log("THIS RIGHT HERE"+req.file.path);
+						exports.URL = cat;
 		 });
 	});
+
 	res.status(204).end();
 });
 
