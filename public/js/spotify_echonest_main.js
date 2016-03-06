@@ -31,7 +31,7 @@ function getEchonestTags() {
         //sort:sortType,
         mood:mood2,
 
-        results: '30',
+        results: '50',
     bucket: ['id:spotify','tracks'], // this must stay the same
     },
     function (data) {
