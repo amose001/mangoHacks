@@ -8,11 +8,11 @@
 //
 // Detection of the most prominent color in an image
 // version 1.1.1
-
+var rgb;
 function ColorFinder(colorFactorCallback) {
   this.callback = colorFactorCallback;
   this.getMostProminentColor = function(imgEl) {
-    var rgb = null;
+    rgb = null;
     if (!this.callback) this.callback = function() { return 1; };
     var data = this.getImageData(imgEl);
     rgb = this.getMostProminentRGBImpl(data, 6, rgb, this.callback);
