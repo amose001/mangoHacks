@@ -5,7 +5,7 @@ var echo_nest = 'http://developer.echonest.com/api/v4/';
 var echo_api_id = 'G92VW09ZBNGLUVN8C';
 var datas = [];
 var clarifaiTagsArray=[];
-var tempo = 0, tempoMax = 0, danceability = 0, energy = 0, acousticness = 0, loudness = 0, liveness = 0, song_hotness = 0, mood2 = 'happy', sortType = "artist_familiarity-desc";
+var tempo = 0, tempoMax = 0, styleType='rock', danceability = 0, energy = 0, acousticness = 0, loudness = 0, liveness = 0, song_hotness = 0, mood2 = 'happy', sortType = "artist_familiarity-desc";
 var randomHot = Math.random()*.8;
 function buildClarifaiArray(list){
 	clarifaiTagsArray = [];
@@ -25,7 +25,7 @@ function getEchonestTags() {
         min_danceability: danceability.toString(),
         min_energy: energy.toString(),
         min_acousticness: acousticness.toString(),
-        style:'indie',
+        style:styleType,
        // min_loudness: loudness.toString(),
        min_liveness: liveness.toString(),
       // song_min_hotttnesss: randomHot,
@@ -135,6 +135,7 @@ function createAlgorithm() {
             loudness += 10 + (deviations * 10 + 1);
             tempo += deviations * 20;
             mood2 = "exciting";
+            styleType = 'electronic';
             sortType = "danceability-desc";
 
         } else if (gymScene.indexOf(clarifaiTagsArray[i]) > -1) {
@@ -146,14 +147,14 @@ function createAlgorithm() {
             loudness += 10 + (deviations * 10 + 1);
             tempo += deviations * 20;
             mood2 = "exciting";
-
+            styleType = "hip hop";
 
         } else if (library.indexOf(clarifaiTagsArray[i]) > -1) {
             console.log("found library scene");
             deviations = Math.random();
             console.log(deviations + "\n");
             acousticness += deviations*.8 ;
-
+            styleType = 'indie';
 
         } else if (rockScene.indexOf(clarifaiTagsArray[i]) > -1) {
             deviations = Math.random();
