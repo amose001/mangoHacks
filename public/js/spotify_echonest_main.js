@@ -107,7 +107,7 @@ function spotifyPlaylist() {
 
 function functionTimer() {
     getEchonestTags();
-    setTimeout(spotifyPlaylist,3000);
+    setTimeout(spotifyPlaylist,4000);
 }
 
 function createAlgorithm() {
@@ -118,8 +118,8 @@ function createAlgorithm() {
     var numOfTags = clarifaiTagsArray.length;
     var deviations = ((Math.random() * 5) + 1);
     for (var i = 0; i < numOfTags - 1; i++) {
-        var bob = "bob strong";
-        var k = bob.indexOf("bob");
+        var bob = "library";
+        var k = bob.indexOf(library);
         if (k >= 0) {
             console.log("This works");
         }
