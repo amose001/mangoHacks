@@ -120,6 +120,8 @@ function createAlgorithm() {
     var rockScene = "black hair color unnatural";
     var numOfTags = clarifaiTagsArray.length;
     var deviations = ((Math.random() * 5) + 1);
+    var rgb = new ColorFinder().getMostProminentColor(document.getElementById('image'));
+    document.getElementById("color").style.backgroundColor = 'rgb(' + rgb.r + ', ' + rgb.g + ', ' + rgb.b + ')';
     colorAnalysis(rgb.r, rgb.g, rgb.b);
     for (var i = 0; i < numOfTags - 1; i++) {
         var bob = "library";
