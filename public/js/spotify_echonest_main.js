@@ -124,7 +124,7 @@ function createAlgorithm() {
             console.log("This works");
         }
         console.log(clarifaiTagsArray[i] + "\n");
-        if (clarifaiTagsArray[i].indexOf(partyScene) > -1) {
+        if (clarifaiTagsArray[i].toString().indexOf(partyScene) > -1) {
             console.log("found party scene");
             deviations = Math.random();
 
@@ -135,7 +135,7 @@ function createAlgorithm() {
             mood2 = "exciting";
             sortType = "danceability-desc";
 
-        } else if (clarifaiTagsArray[i].indexOf(gymScene) > -1) {
+        } else if (clarifaiTagsArray[i].toString().indexOf(gymScene) > -1) {
             console.log("found gym scene");
             deviations = Math.random();
 
@@ -146,23 +146,23 @@ function createAlgorithm() {
             mood2 = "exciting";
 
 
-        } else if (clarifaiTagsArray[i].indexOf(library) > -1) {
+        } else if (clarifaiTagsArray[i].toString().indexOf(library) > -1) {
             console.log("found library scene");
             deviations = Math.random();
             console.log(deviations + "\n");
             acousticness += deviations ;
 
 
-        } else if (clarifaiTagsArray[i].indexOf(rockScene) > -1) {
+        } else if (clarifaiTagsArray[i].toString().indexOf(rockScene) > -1) {
             deviations = Math.random();
 
 
-        } else if (clarifaiTagsArray[i].indexOf("indoors") > -1) {
+        } else if (clarifaiTagsArray[i].toString().indexOf("indoors") > -1) {
 
             deviations = Math.random();
             tempo += deviations * 10;
 
-        } else if (clarifaiTagsArray[i].indexOf("outdoors") > -1) {
+        } else if (clarifaiTagsArray[i].toString().indexOf("outdoors") > -1) {
             deviations = Math.random();
             if (tempo > 0) { }
             else {
