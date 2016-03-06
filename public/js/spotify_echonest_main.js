@@ -117,7 +117,8 @@ function createAlgorithm() {
     var rockScene = "black hair color unnatural ";
     var numOfTags = clarifaiTagsArray.length;
     var deviations = ((Math.random() * 5) + 1);
-    for(var i=0;i<numOfTags-1;i++){
+    for (var i = 0; i < numOfTags - 1; i++) {
+        console.log(clarifaiTagsArray[i] + "\n");
         if (clarifaiTagsArray[i].indexOf(partyScene) > -1) {
             console.log("found party scene");
             deviations = Math.random();
