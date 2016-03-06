@@ -118,6 +118,11 @@ function createAlgorithm() {
     var numOfTags = clarifaiTagsArray.length;
     var deviations = ((Math.random() * 5) + 1);
     for (var i = 0; i < numOfTags - 1; i++) {
+        var bob = "bob strong";
+        var k = bob.indexOf("bob");
+        if (k > 0) {
+            console.log("This works");
+        }
         console.log(clarifaiTagsArray[i] + "\n");
         if (clarifaiTagsArray[i].indexOf(partyScene) > -1) {
             console.log("found party scene");
