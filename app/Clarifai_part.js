@@ -8,34 +8,33 @@ var server = require('../server.js');
 exports.tags = [];
 //var exports = module.exports = {};
 
-function resultHandler( err, res ) {
-	if( err != null ) {
-		console.log(err);
-	}else {
-		//If tags exist they will be pushed into the tags array
-		if( typeof res["status_code"] === "string" &&( res["status_code"] === "OK" || res["status_code"] === "PARTIAL_ERROR" )) {
-			for( i = 0; i < res.results.length; i++ ) {
-				if( res["results"][i]["status_code"] === "OK" ) {
-					exports.tags.push(res["results"][i].result["tag"]["classes"]);
-					console.log(res["results"][i].result["tag"]["classes"]);
-				}
-			}
-		}
-	}
+function resultHandler(err, res) {
+    if (err != null) {
+        console.log(err);
+    } else {
+        //If tags exist they will be pushed into the tags array
+        if (typeof res["status_code"] === "string" && (res["status_code"] === "OK" || res["status_code"] === "PARTIAL_ERROR")) {
+            for (i = 0; i < res.results.length; i++) {
+                if (res["results"][i]["status_code"] === "OK") {
+                    exports.tags.push(res["results"][i].result["tag"]["classes"]);
+                    console.log(res["results"][i].result["tag"]["classes"]);
+                }
+            }
+        }
+    }
 }
 
-exports.getTags = function() {
-	console.log("KANYEHAMEHA");
-	console.log(server.URL);
-//	var imageURL = 'http://i.imgur.com/72zJC8Y.jpg';
-//	var imageURL = server.URL;
-	var imageURL = 'http://localhost:3000/uploads/sun.jpg';
-	console.log(imageURL);
+exports.getTags = function () {
+    console.log("KANYEHAMEHA");
+    console.log(server.URL);
+    //	var imageURL = 'http://i.imgur.com/72zJC8Y.jpg';
+    //	var imageURL = server.URL;
+    var imageURL = 'http://localhost:3000/uploads/sun.jpg';
+    console.log(imageURL);
 
-	var imageId = "uploadedImage";
-	Clarifai.tagURL( imageURL , imageId, resultHandler );
-	return exports.tags;
+    var imageId = "uploadedImage";
+    Clarifai.tagURL(imageURL, imageId, resultHandler);
+    return exports.tags;
 }
 
 //getTags();
-
