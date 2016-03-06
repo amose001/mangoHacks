@@ -25,7 +25,7 @@ function getEchonestTags() {
         min_danceability: danceability.toString(),
         min_energy: energy.toString(),
        min_acousticness: acousticness.toString(),
-       // min_loudness: loudness.toString(),
+        min_loudness: loudness.toString(),
        // min_liveness: liveness.toString(),
         mood:mood2,
 
