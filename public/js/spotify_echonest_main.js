@@ -116,7 +116,7 @@ function functionTimer() {
 function createAlgorithm() {
     var library = "books book library university school";
     var partyScene = "party club dancing nightlife";
-    var gymScene = "weight gym weight exercise";
+    var gymScene = "weight gym weight exercise athlete";
     var rockScene = "black hair color unnatural";
     var numOfTags = clarifaiTagsArray.length;
     var deviations = ((Math.random() * 5) + 1);
